@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!--
+  Customize this policy to fit your own app's needs. For more guidance, see:
+      https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+  Some notes:
+      * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+      * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+      * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+          * Enable inline JS: add 'unsafe-inline' to default-src
+  -->
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#2196f3">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <title>Alliance</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">  
+  <link rel="stylesheet" href="framework7/css/framework7.min.css">
+  <link rel="stylesheet" href="css/icons.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar"></div>
+    <!-- Left panel with reveal effect when hidden -->
+    <div class="panel panel-left panel-reveal">
+      <div class="view view-left">
+        <div class="page">
+          <div class="navbar color-theme-white">
+            <div class="navbar-inner sliding">
+              <div class="title"> <p class="text-color-black">Menu</p></div>
+            </div>
+          </div>
+          <div class="page-content">
+            <!-- <div class="list links-list">
+              <ul>
+                <li><a href="/left-page-1/">Left Page 1</a></li>
+                <li><a href="/left-page-2/">Left Page 2</a></li>
+              </ul>
+            </div> -->
+            <div class="list links-list">
+              <ul>
+                <li>
+                  <a href="/about/" data-view=".view-main" class="panel-close">Sobre</a>
+                </li>
+                <li>
+                  <a href="#" class="popup-open" data-popup="#my-popup">Orçamento</a>
+                </li>
+                <li>
+                  <a href="#" data-login-screen="#my-login-screen" class="login-screen-open">Login</a>
+                </li>
+                <li>
+                  <a href="/galeria/" data-view=".view-main" class="panel-close">Lista de contato</a>
+                </li>
+                <!-- <li>
+                  <a href="#" class="popup-open" data-popup="#popup-acompanhe">Acompanhe seu pedido</a>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Right panel with cover effect -->
+    <!-- <div class="panel panel-right panel-cover theme-dark">
+      <div class="view">
+        <div class="page">
+          <div class="navbar color-theme-red">
+            <div class="navbar-inner">
+              <div class="title">Right Panel</div>
+            </div>
+          </div>
+          <div class="page-content">
+            <div class="block">Right panel content goes here</div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Your main view, should have "view-main" class -->
+    <div class="view view-main ios-edges">
+      <!-- Page, data-name contains page name which can be used in callbacks -->
+      <div class="page" data-name="home">
+        <!-- Top Navbar -->
+        <div class="navbar color-theme-white">
+          <div class="navbar-inner">
+            <div class="left">
+              <a href="#" class="link icon-only panel-open" data-panel="left">
+                <!-- <i class="f7-icons">settings_fill</i> -->
+                <img src="img/menu.png" alt="menu">
+                <!-- <i class="icon material-icons md-only">bars</i> -->
+              </a>
+            </div>
+            <div class="right">
+              <a href="#" class="link icon-only panel-open" data-panel="right">
+                  <img class="lg" src="img/logo.png" alt="logo alliance">
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Toolbar-->
+        <div class="toolbar color-theme-white">
+          <!-- <div class="toolbar-inner">
+            <a href="#" class="link">Left Link</a>
+            <a href="#" class="link">Right Link</a>
+          </div> -->
+        </div>
+        <!-- Scrollable page content-->
+        <div class="page-content">
+            <div data-speed="900" data-pagination='{"el": ".swiper-pagination"}' data-space-between="50" class="swiper-container swiper-init demo-swiper">
+                <div class="swiper-pagination"></div>
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img class="cozinha" src="img/cozinha.jpg" alt="cozinha alliance"></div>
+                  <!-- <div class="swiper-slide"><img class="imagem" src="img/cozinha1.jpg" alt="cozinha alliance"></div> -->
+                  </div>
+                  </div>
+
+          <div class="sobre">
+             <h2>A Alliance</h2>
+            <p>Somos uma empresa de móveis planejados, visando a satisfação do cliente. Estamos no mercado desde 2012, onde tudo começou como um hobby.</p>
+
+            <!-- <p>Each view may have different layout, different navbar type (dynamic, fixed or static) or without navbar.</p>
+
+            <p>The fun thing is that you can easily control one view from another without any line of JavaScript just using "data-view" attribute on links.</p> -->
+          </div>
+          <!-- <div>
+              <h2 class="h4">Acesse sua página</h2>
+              <a href="#" class="col button color-black button-outline button-round button-small button-raised 
+              panel-close login-screen-open btn" data-login-screen="#my-login-screen">Login</a> <br>
+            </div> -->
+
+          <div class="block-title glr"><h2>Galeria</h2></div>
+          <div class="list">
+           <a href="/galeria/"> <img class="glra" src="img/cozinha-alliance.jpg" alt="cozinha alliance"> </a> <br><br><br><br><br><br><br><br><br><br>
+          
+          </div>
+
+          <!-- <div class="block-title">Modals</div>
+          <div class="block block-strong">
+            <div class="row">
+              <div class="col-50">
+                <a href="#" class="button button-raised button-fill popup-open" data-popup="#my-popup">Popup</a>
+              </div> 
+              <div class="col-50">
+                <a href="#" class="button button-raised button-fill login-screen-open" data-login-screen="#my-login-screen">Login Screen</a>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- <div class="block-title">Panels</div> -->
+          <!-- <div class="block block-strong">
+            <div class="row">
+              <div class="col-50">
+                <a href="#" class="button button-raised button-fill panel-open" data-panel="left">Left Panel</a>
+              </div>
+              <div class="col-50">
+                <a href="#" class="button button-raised button-fill panel-open" data-panel="right">Right Panel</a>
+              </div>
+            </div>
+          </div> -->
+          <div class="footer">
+              <div class="footer_historia col-md-4">
+                  <h2>Nossa História</h2>
+                  <p>Somos uma empresa de móveis planejados, visando a satisfação do cliente.  Estamos no mercado desde 2012, onde tudo começou <br> como um hobby, e de tanto sucesso <br> que obtivemos com os clientes, expandimos nossos serviços desde 2015, onde houve investimentos de máquinas.</p>
+                </div>
+                <div class="footer_contato col-md-4">
+                  <h2>Contato</h2>
+                  <p>21 9988-7766</p>
+                  <p>contato@bikcraft.com.br</p>
+                  <p>Botafogo - RJ</p>
+                </div>
+                <div class="footer_redes col-md-4">
+                  <h2>Redes Sociais</h2>
+                  <!-- ul>li*3>a>img -->
+                  <ul>
+                      <li>
+                        <img src="img/fb.png" alt="logo facebook"> Alliance Móveis Planejados Campinas
+                        <!-- <i class="f7-icons">social_facebook_fill</i> Alliance Móveis Planejados Campinas -->
+                     </li>
+                     <br> <br>
+                     <li>
+                       <img src="img/whatsapp.png" alt="logo whatsapp">  19 98290-0918 
+                        <!-- <i class="f7-icons"> phone_round_fill</i> 19 3203-3139 -->
+                     </li>
+                     <br><br>
+                    <li>
+                        <i class="material-icons">phone_iphone</i> 19 99624-6589
+                    </li> <br><br>
+                    <li>
+                        <i class="f7-icons">phone</i> 19 3203-3139
+                    </li> <br><br>
+                    <li>
+                      <img src="img/email.png" alt="email"> alliance.mpc@gmail.com
+                    </li>   
+                  </ul>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+     
+    <!-- Popup 
+     <div class="popup-acompanhe" id="popup-acompanhe">
+      <div class="view">
+    <div class="page" data-name="about">
+      <div class="navbar color-theme-gray">
+        <div class="navbar-inner sliding">
+          <div class="left">
+            <a href="#" class="link popup-close">
+              <i class="icon icon-back"></i>
+              <span class="ios-only">Back</span>
+            </a>
+          </div>
+          <div class="title">Acompanhe seu pedido</div>
+        </div>
+      </div>
+      <div class="block-title">Determinate Progress Bar</div>
+<div class="block block-strong">
+  <p>Inline determinate progress bar:</p>
+  <div>
+    <p><span data-progress="10" class="progressbar" id="demo-inline-progressbar"></span></p>
+    <p class="segmented segmented-raised">
+      <a href="#" data-progress="10" class="button set-inline-progress">10%</a>
+      <a href="#" data-progress="30" class="button set-inline-progress">30%</a>
+      <a href="#" data-progress="50" class="button set-inline-progress">50%</a>
+      <a href="#" data-progress="100" class="button set-inline-progress">100%</a>
+    </p>
+  </div>
+</div>-->
+
+
+    <!-- Popup -->
+    <div class="popup" id="my-popup">
+        <div class="view">
+            <div class="page">
+                <div class="navbar color-theme-white">
+                  <div class="navbar-inner sliding">
+                    <div class="left">
+                      <a href="#" class="link popup-close">
+                        <!-- <i class="icon icon-back"></i> -->
+                        <img src="img/v.png" alt="voltar">
+                        <span class="ios-only">Back</span>
+                      </a>
+                    </div>
+                    <div class="title"> <p class="text-color-black">Orçamento</p></div>
+                    <!-- <div class="title">Cadastro de Usuários</div> -->
+                  </div>
+                </div>
+    <div class="page-content">
+      <div class="list no-hairlines-md"> <br>
+
+        <form>
+          <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Nome</label>  
+          <div class="col-md-4">
+            <input id="nameInput" class="form-control input-md" type="text">                  
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="emailInput">Email</label>  
+       <div class="col-md-4">
+          <input id="emailInput" class="form-control input-md" type="email">                                
+       </div>
+     </div>
+                         
+          <div class="form-group">
+                <label class="col-md-4 control-label" for="addressInput">Endereço</label>  
+            <div class="col-md-4">
+                <input id="addressInput" class="form-control input-md" type="text">                               
+            </div>
+          </div> 
+
+          <div class="form-group">
+               <label class="col-md-4 control-label" for="bairInput">Bairro</label>  
+            <div class="col-md-4">
+               <input id="bairInput" class="form-control input-md" type="text">                                   
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="cidInput">Cidade</label>  
+         <div class="col-md-4">
+            <input id="cidInput" class="form-control input-md" type="text">                                   
+         </div>
+       </div>
+
+          <div class="form-group">
+              <label class="col-md-4 control-label" for="ufInput">Estado</label>  
+            <div class="col-md-4">
+               <input id="ufInput" class="form-control input-md" type="text">                               
+            </div>
+          </div>
+
+          <div class="form-group">
+               <label class="col-md-4 control-label" for="phoneInput">Telefone</label>  
+            <div class="col-md-4">
+               <input id="phoneInput" class="form-control input-md" type="tel" placeholder="(00) 0000-0000">                               
+            </div>
+          </div> 
+
+          <!-- Select Basic -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="selectbasic">Finalidade</label>
+            <div class="col-md-4">
+              <select id="selectbasic" name="selectbasic" class="form-control">
+                <option value="decoracao">Decoração</option>
+                <option value="reforma">Reforma</option>
+                <option value="construcao">Construção</option>
+              </select>
+            </div>
+            </div>
+            
+            
+            <!-- <label class="col-md-4 control-label" for="phoneInput">Finalidade</label> 
+    <div class="list">
+      <ul>
+        <li>
+          <label class="item-checkbox item-content">
+            <input type="checkbox" name="checkbox" value="Books" checked="checked"/>
+            <i class="icon icon-checkbox"></i>
+            <div class="item-inner">
+              <div class="item-title">Decoração</div>
+            </div>
+          </label>
+        </li>
+        <li>
+          <label class="item-checkbox item-content">
+            <input type="checkbox" name="checkbox" value="Movies"/>
+            <i class="icon icon-checkbox"></i>
+            <div class="item-inner">
+              <div class="item-title">Reforma</div>
+            </div>
+          </label>
+        </li>
+        <li>
+          <label class="item-checkbox item-content">
+            <input type="checkbox" name="checkbox" value="Food"/>
+            <i class="icon icon-checkbox"></i>
+            <div class="item-inner">
+              <div class="item-title">Construção</div>
+            </div>
+          </label>
+        </li>
+      </ul>
+    </div> -->              
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="textinput">Cômodo</label>  
+              <div class="col-md-4">
+                <input id="comInput" class="form-control input-md" type="text">                  
+              </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="textinput">Metragem</label>  
+              <div class="col-md-4">
+                <input id="metragemInput" class="form-control input-md" type="text">                  
+              </div>
+            </div>
+          
+          <div class="form-group">
+              <label class="col-md-4 control-label" for="date">Dia</label>  
+            <div class="col-md-4">
+              <input id="nascInput" class="form-control input-md" type="date">                  
+            </div>
+          </div>  
+        
+        </div>
+
+        <button class="col button button-small button-round button-outline color-black" id="addButton"> Cadastrar </button> <br>
+          </div>
+            
+        </form>                     
+      </div>
+    </div>
+    
+   <!-- Login Screen -->
+   <div class="login-screen" id="my-login-screen">
+    <div class="view">
+        <div class="navbar color-theme-white">
+            <div class="navbar-inner sliding">
+              <div class="left">
+                <a href="#" class="link login-screen-close">
+                  <img src="img/v.png" alt="voltar">
+                </a>
+              </div>
+            </div>
+        </div>
+      <div class="page color-theme-grey">
+        <div class="page-content login-screen-content">
+          <div class="login-screen-title">Login</div>
+          <div class="list">
+            <ul>
+              <li class="item-content item-input">
+                <div class="item-inner">
+                  <div class="item-title item-label">Email</div>
+                  <div class="item-input-wrap">
+                    <input type="email" name="username" placeholder="Digite seu email">
+                  </div>
+                </div>
+              </li>
+              <li class="item-content item-input">
+                <div class="item-inner">
+                  <div class="item-title item-label">Senha</div>
+                  <div class="item-input-wrap">
+                    <input type="password" name="password" placeholder="Digite sua senha">
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="list">
+              <ul>
+                <li>
+                  <a href="#" class="item-link list-button login-button SignIn">Entrar</a>
+                </li>
+                <li>
+                  <a href="#" class="item-link list-button login-button SignUp">cadastre-se</a>
+                </li>
+                <li>
+                  <a href="#" class="item-link list-button login-button SignOut">Sair</a>
+                </li>
+              </ul>
+              <div class="block-footer">Some text about login information.<br>Click "Sign In" to close Login Screen</div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- Cordova -->
+  <!--
+  <script src="cordova.js"></script>
+  -->
+
+  <!-- Framework7 library -->
+  <script src="framework7/js/framework7.min.js"></script>
+
+  <!-- App routes -->
+  <script src="js/routes.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+
+  <!-- Your custom app scripts -->
+  <script src="js/firebase.js"></script>
+  <script src="js/firebaseapp.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/lista.js"></script>
+
+</body>
+</html>
