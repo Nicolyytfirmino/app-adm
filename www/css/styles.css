@@ -18,41 +18,36 @@
 
 .lg { position: absolute; height: 120%; right: 30%;}
 
-.cozinha img{height: 50%;}
+.cozinha{position: relative; left: 34%; }
 
-.sobre h2{color: #a58c76; text-align: center;}
+.sobre h2{color: #000; text-align: center;}
 
 .sobre p{color: black; text-align: center;}
 
-.glr h2{color: #a58c76; text-align: center;}
+.glr h2{color: #000; text-align: center;}
 
-.glra{position: absolute; left: 3%;}
+.glra{position: absolute; left: 39%;}
 
-.footer{background: #a58c76; padding: 10px 0; }
+.footer{background: #a58c76;}
 
-.footer h2{color: #000;}
+.footer h2{color: #000; }
 
 /* .footer_contato{color: #fff;} */
 
 .footer_contato h2{ margin: 15px; }
-
-/* .footer p{color: #fff;} */
-
-.footer h3{color: #a58c76;}
 
 .footer_contato ul li{
 	display:inline-block;
 	margin-right: 8px;
 	text-align: center;
 }
-.footer_redes h2{margin:15px;}
+/* .footer_redes h2{margin:1px;} */
 
 .footer_redes ul li{
 	display:inline-block;
 	margin-right: 10px;
 }
 
-.footer_historia h2{ margin: 15px;}
 
 .color-custom { color: #fff; }
 
